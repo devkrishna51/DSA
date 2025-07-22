@@ -8,7 +8,7 @@ void print(int n )
         cout << i <<"  ";
         i++;
     }
-}
+}// fdfdf
 int main(){
     int n = 5 ;
     print(n);

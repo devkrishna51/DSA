@@ -1,15 +1,21 @@
 #include<iostream>
-using namespace std; 
+using namespace std ;
 void print(int n )
-{ 
-  
-    while (n>0)
+{
+    if(n == 0)
     {
-        cout << n <<"  ";
-        n--;
+        return ;
     }
+    else{
+          cout << n <<endl;
+         print(n-1);
+      
+       
+    }
+    
 }
-int main(){
+int main()
+{
     int n = 5 ;
     print(n);
     return 0;

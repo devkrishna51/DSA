@@ -1,17 +1,23 @@
-#include<iostream>
-using namespace std; 
-void print(int n )
-{ 
-  int sum = 0;
-    while (n>0)
-    {
-       sum = sum + n;
-        n--;
-    }
-    cout << "the sum fo no is : " << sum;
-}
-int main(){
-    int n = 5 ;
-    print(n);
+#include <iostream>
+using namespace std;
+int print(int n)
+
+{
+
+  if (n == 0)
+  {
     return 0;
+  }
+  else
+  {
+    return n + print(n - 1);
+  }
+}
+int main()
+{
+  int n = 5;
+  int result = print(n);
+  cout << "sum of all no is : " << result << endl;
+
+  return 0;
 }

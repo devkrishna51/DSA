@@ -1,15 +1,20 @@
 #include<iostream>
-using namespace std; 
+using namespace std ;
 void print(int n )
-{ 
-    int i = 1 ;
-    while (i<=n)
+{
+    if(n == 0)
     {
-        cout << i <<"  ";
-        i++;
+        return ;
     }
-}// fdfdf
-int main(){
+    else{
+         print(n-1);
+        cout << n <<endl;
+       
+    }
+    
+}
+int main()
+{
     int n = 5 ;
     print(n);
     return 0;

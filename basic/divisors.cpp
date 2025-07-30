@@ -1,14 +1,16 @@
-#include <iostream>
-using namespace std;
+#include<iostream>
+using namespace std ; 
+int i = 0 ;
+
 int main()
 {
-    int n = 10;
-    for(int i  =1 ; i <=10 ; i++)
+    int a = 15 ; 
+    for(int i = 1; i <= a; i++)
     {
-        if ( n % i ==0)
+        if(a % i == 0 )
         {
-            cout << i << "    "  ;
+            cout << i <<"  "; 
         }
     }
-    return 0;
+    return 0 ; 
 }

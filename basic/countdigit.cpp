@@ -1,14 +1,19 @@
 #include<iostream>
 using namespace std ;
+int count(int n)
+{
+    int i = 0 ;
+    while(n>0)
+    {
+        i++;
+        n = n /10;
+    }
+    return i ; 
+}
 int main()
 {
-    int n = 13423234 ;
-    int rev = 0 ;
-    while (n > 0)
-    {
-        rev++;
-        n = n / 10 ;
-    }
-    cout << "Digits are :" <<rev<<endl;
+    int n = 1234 ; 
+    int result = count(n);
+    cout << "the digits are : " << result  ;
     return 0;
 }

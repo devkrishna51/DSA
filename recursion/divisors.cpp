@@ -1,19 +1,20 @@
-#include<iostream>
-using namespace std ;
-void divisor(int n , int i = 1 )
+#include <iostream>
+void divisors(int n, int i = 1)
 {
-    if ( i > n) 
-    {return ;}
-    if(n % i ==0)
+    if (i > n)
     {
-        cout << i << "  ";
+        return ;
     }
-    divisor(n,i+1);
-
+    if (n % i == 0)
+    {
+        std::cout << i << "   ";
+     
+    }
+    divisors(n, i + 1);
 }
 int main()
 {
-    int n  = 18 ;
-    divisor(n);
-    return 0 ; 
+    int n = 12;
+    divisors(n);
+    return 0;
 }

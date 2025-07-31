@@ -1,27 +1,24 @@
 #include <iostream>
-using namespace std;
 int palindorme(int n, int rev = 0)
 {
+        if(n == 0 )
+        {
+            return rev ; 
+        }
+        return palindorme(n/10 , rev = rev * 10  + n % 10 );
 
-    if(n==0)
-    {
-        return rev ; 
     }
-    palindorme(n / 10, rev = rev * 10 + n % 10);
-   
-}
 int main()
 {
-    int n = 121;
-    int save = n;
+    int n = 1221;
     int result = palindorme(n);
-    if(save == result )
+    if (n == result)
     {
-        cout << "no is palindorme" <<endl;
+        std ::cout << "the no is palindorme";
     }
-    else{
-        cout << "no is not palindorme" <<endl;
+    else
+    {
+        std::cout << "no is not palindorme";
     }
-
     return 0;
 }

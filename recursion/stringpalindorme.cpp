@@ -8,23 +8,23 @@ int lenght(string name, int len = 0)
     }
     return lenght(name, len + 1)   ;
 }
-int plaindrome(string name, int count, int i = 0)
+int plaindrome(string name, int start, int end)
 {
-    if (i >= count)
+    if (start >= end)
     {
         return 1;
     }
-    if (name[i] != name[count])
+    if (name[start] != name[end])
     {
         return 0;
     }
-    return plaindrome(name, count - 1, i + 1);
+    return plaindrome(name,start+1, end-1);
 }
 int main()
 {
-    string name = "madam";
+    string name = "krishna";
     int count = lenght(name);
-    int result = plaindrome(name, count - 1);
+    int result = plaindrome(name, 0,count - 1);
     if (result == 1)
     {
         cout << "\n\nstring is palindrome\n\n" << endl;

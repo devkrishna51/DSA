@@ -1,7 +1,6 @@
 // Har step me sabse chhota element dhoond ke sahi jagah (starting me) le jaate hain.
 
 // Ek ek karke sabke liye ye repeat karte hain.
-
 #include<iostream>
 using namespace std ; 
 int main( )

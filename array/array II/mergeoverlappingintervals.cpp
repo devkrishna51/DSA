@@ -13,7 +13,7 @@ int main()
 
      for(int i =1 ; i < 4 ;i++)
      {
-          if(arr[i][0] <=end)
+          if(arr[i][0] <= end)
           {
                if(arr[i][1] > end)
                {

@@ -1,42 +1,39 @@
-#include <iostream>
-#include <vector>
-using namespace std;
+#include<iostream>
+#include<vector>
+#include<unordered_map>
+using namespace std ; 
 class Solution
 {
 
-public:
-     int LongestSubarray(vector<int> arr, int k)
+     public : 
+     int LongestSubarray(vector<int> arr , int k)
      {
-          int n = arr.size();
-          int longest = 0;
+          int n = arr.size() ; 
+          int count = 0 ; 
+          int prefixSum  = 0 ; 
+          unordered_map<int ,int > map ; 
+          map[0] = 1;  
           for(int i = 0 ; i < n ; i++)
           {
-               int sum = 0 ; 
-               for(int j = i ; j < n ; j++)
+               prefixSum += arr[i] ; 
+               if(map.find(prefixSum - k ) != map.end())
+
                {
-                    sum += arr[j] ; 
-                    if(sum == k)
-                    {
-                         longest++ ; 
-                    }
+                    count += map[prefixSum - k] ; 
                }
-          }
-          return longest;
+               map[prefixSum]++  ; 
+          } 
+          return count ; 
+
      }
 };
-int main()
-{
-     vector<int> arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-                        5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
-                        10, 20, 30, 40, 50, 60, 70, 80, 90, 100,
-                        1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-                        15, 25, 35, 45, 55, 65, 75, 85, 95, 105};
-     int k = 100;
+int main(){
 
-     Solution s1;
-     int result = s1.LongestSubarray(arr, k);
-     cout << "The Length of subarray is :  " << result << endl;
-     ;
+     vector<int> arr = {1,2,3 } ;
+     int k = 3 ; 
+     Solution s1  ; 
+     int result = s1.LongestSubarray(arr,k ) ; 
+     cout << "The Subarrays are :  " << result  <<endl ;
+     return 0 ; 
 
-     return 0;
 }

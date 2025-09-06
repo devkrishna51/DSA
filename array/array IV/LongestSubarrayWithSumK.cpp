@@ -9,20 +9,15 @@ public:
      {
           int n = arr.size();
           int longest = 0;
-          for (int st = 0; st < n; st++)
+          for(int i = 0 ; i < n ; i++)
           {
-               for (int end = st; end < n; end++)
+               int sum = 0 ; 
+               for(int j = i ; j < n ; j++)
                {
-                    int sum = 0;
-                    int count = 0;
-                    for (int i = st; i <= end; i++)
+                    sum += arr[j] ; 
+                    if(sum == k)
                     {
-                         sum = sum + arr[i];
-                         count++;
-                    }
-                    if (sum == k)
-                    {
-                         longest = max(longest , count);
+                         longest++ ; 
                     }
                }
           }

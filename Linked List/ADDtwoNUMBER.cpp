@@ -51,20 +51,29 @@ class Solution
 public:
      Node *addTwoNumbers(Node *l1, Node *l2)
      {
-          Node *dummy = new Node(0);
-          Node *curr = dummy;
-          while (l1 != nullptr || l2 != nullptr)
+
+          Node *temp = new Node(0);
+          Node *curr = temp;
+          int carry = 0;
+          while (l1 != nullptr || l2 != nullptr || carry)
           {
-               int x = (l1 ? l1->data : 0);
-               int y = (l2 ? l2->data : 0);
-               curr->next = new Node(x + y);
-               curr = curr->next;
+               int x = 0, y = 0;
                if (l1)
+               {
+                    x += l1->data;
                     l1 = l1->next;
+               }
                if (l2)
+               {
+                    y += l2->data;
                     l2 = l2->next;
+               }
+               int sum = x + y + carry;
+               carry = sum / 10;
+               curr->next = new Node(sum % 10);
+               curr = curr->next;
           }
-          return dummy->next;
+          return temp->next;
      }
      void print(Node *head)
      {

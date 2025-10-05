@@ -15,16 +15,25 @@ class Solution
      public:
      Node *MiddleList(Node *head)
      {
-          Node *slow = head ; 
-          Node *fast = head ; 
-
-          while (fast != nullptr && fast->next != nullptr)
+          if (head == nullptr)
           {
-               slow = slow->next ;
-               fast = fast->next->next ;
+               return nullptr ; 
           }
-          return slow ;
-         
+               int count = 0 ; 
+               Node * temp = head ; 
+               while(temp != nullptr)
+               {
+                    count++ ; 
+                    temp = temp->next ; 
+               }
+               Node *temp2 = head ; 
+               for(int i = 0 ; i < count/2 ; i++)
+               
+               {
+                    temp2 = temp2->next ; 
+               }
+               return temp2 ; 
+
      }
    
 };

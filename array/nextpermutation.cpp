@@ -45,7 +45,7 @@ class Solution
 };
 int main()
 {
-    vector<int> vec = {1, 2, 3, 5, 4};
+    vector<int> vec = {1, 2, 3, 4, 5};
     for(int i : vec)
     {
         cout << i << "  "; 

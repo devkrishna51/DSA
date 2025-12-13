@@ -1,0 +1,1 @@
+temp->data == temp->next->data

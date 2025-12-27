@@ -3,7 +3,6 @@
 using namespace std ; 
 class Solution 
 {
-
      public : 
      int minPlatform(vector<int> &arr , vector<int> &dep)
      {
@@ -39,7 +38,7 @@ int main()
      Solution s1 ; 
      int result = s1.minPlatform(arr , dep) ; 
 
-     cout << "The Maximum Platform : " << result ; 
+     cout << "The Maximum Platform : " << result ;
 
      return 0 ; 
 }

@@ -6,30 +6,22 @@ class Solution
 {
 
 public:
-    void deleteMid(stack<int>& s) {
-        
-        stack<int> s2(s) ; 
-        int count = 0 ; 
-        while(!s2.empty())
-        {
-            count ++ ; 
-            s2.pop() ; 
-            
-        }
-        int half = count / 2 ; 
-        vector<int> arr ; 
-        for(int i = 0 ; i < half ; i++)
-        {
-            arr.push_back(s.top()) ; 
-            s.pop() ; 
-        }
-        s.pop() ; 
-        for(int i = arr.size() -1 ; i >= 0 ; i--)
-        {
-            s.push(arr[i]) ; 
-        }
-        
-    }
+     void deleteMid(stack<int> &s)
+     {
+          int n = s.size() / 2;
+          vector<int> arr;
+          for (int i = 0; i < n; i++)
+          {
+               arr.push_back(s.top());
+               s.pop();
+          }
+          s.pop();
+          for (int i = arr.size() - 1; i >= 0; i--)
+          {
+               s.push(arr[i]) ; 
+               arr.pop_back() ; 
+          }
+     }
 };
 int main()
 {

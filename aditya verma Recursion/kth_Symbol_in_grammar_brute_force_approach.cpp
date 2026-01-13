@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
+#include <math.h>
 using namespace std;
 class Solution
 {
@@ -10,28 +12,18 @@ public:
           {
                return 0;
           }
-          vector<vector<int>> arr;
-          arr.push_back({0});
-          for (int i = 1; i < n; i++)
+          int ans = 0;
+          while (n > 1)
           {
-               vector<int> prev = arr[i - 1];
-               vector<int> curr;
-               for (auto x : prev)
+               int mid = pow(2, n - 2);
+               if(k > mid)
                {
-                    if (x == 0)
-                    {
-                         curr.push_back(0);
-                         curr.push_back(1);
-                    }
-                    else
-                    {
-                         curr.push_back(1);
-                         curr.push_back(0);
-                    }
+                    ans = 1 - ans ; 
+                    k = k-mid ; 
                }
-               arr.push_back(curr);
+               n-- ; 
           }
-          return arr[n - 1][k - 1];
+          return ans ; 
      }
 };
 int main()

@@ -53,12 +53,12 @@ int main()
      vector<vector<string>> re = s1.solveNQueens(n) ;
      for(auto x : re) 
      {
+        cout << "[ " ; 
           for(auto x2 :x)
           {
                cout << "[" <<x2 << "]" << " " ;
-
           }
-          cout << endl ; 
+          cout << " ]" <<endl ; 
      }
      return 0 ; 
 }

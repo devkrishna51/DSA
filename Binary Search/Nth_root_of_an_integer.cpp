@@ -7,36 +7,35 @@ class Solution
 public:
      int NthRoot(int n, int m)
      {
-          bool flag = false, flag2 = false;
-          int ans = 0;
-          for (int i = 1; i <= m; i++)
+          if (m == 0)
           {
-               int sum = 1;
-               for (int j = 1; j <= n; j++)
-               {
-                    sum *= i;
-               }
-               if (sum == m)
-               {
-                    flag = true;
-                    ans = i;
-                    break;
-               }
-               else if (sum > m)
-               {
-                    flag2 = true;
-                    ans = -1;
-                    break;
-               }
+               return 0 ; 
           }
-          if (flag == true && flag2 == false)
+          int start = 1 ; 
+          int end = m ; 
+          while(start <= end)
           {
-               return ans;
+               int mid = (start+end) /2 ; 
+               int sum =1 ; 
+               for(int i = 0 ; i < n ; i ++)
+               {
+                    sum *= mid ; 
+               }
+               if(sum == m)
+               {
+                    return mid ; 
+               }
+               else if (sum < m)
+               {
+                    start  = mid +1 ; 
+               }
+               else if(sum > m )
+               {
+                    end = mid-1 ; 
+               }
+
           }
-          else
-          {
-               return ans;
-          }
+          return -1;  
      }
 };
 int main()

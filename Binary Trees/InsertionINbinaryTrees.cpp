@@ -33,10 +33,12 @@ public:
 
           if (key < root->data)
           {
+               cout << "yaha par left wala kaam hua" << endl ; 
                root->left = Insertion(root->left, key);
           }
           else
           {
+               cout << "yaha par right wala kaam hua " << endl ; 
                root->right = Insertion(root->right, key);
           }
           return root;

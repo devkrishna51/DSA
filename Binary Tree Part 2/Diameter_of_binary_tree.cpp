@@ -14,9 +14,9 @@ public:
 };
 class Solution
 {
-public:
-    int height(Node *root)
-    {
+     int ans  = 0 ; 
+     int height(Node *root)
+     {
           if(root == NULL)
           {
                return 0 ; 
@@ -25,7 +25,14 @@ public:
           int left = height(root->left) ; 
           int right = height(root->right) ; 
           
+          ans = max(ans , left+right) ; 
           return max(left , right) +1 ; 
+     }
+public:
+    int Diameter(Node *root)
+    {
+        height(root) ; 
+        return ans ; 
     }
 };
 int main()
@@ -43,7 +50,7 @@ int main()
      root->right->right = new Node(7);
 
      Solution s1;
-     int result = s1.height(root);
-     cout << "\nThe Height of Binary Tree is : " << result <<endl <<endl; 
+     int result = s1.Diameter(root);
+     cout << "\nThe Diameter of Binary Tree is : " << result <<endl <<endl; 
      return 0;
 }

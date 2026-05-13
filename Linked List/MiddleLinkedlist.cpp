@@ -26,13 +26,13 @@ class Solution
                     count++ ; 
                     temp = temp->next ; 
                }
-               Node *temp2 = head ; 
+               Node *s = head ; 
                for(int i = 0 ; i < count/2 ; i++)
                
                {
-                    temp2 = temp2->next ; 
+                    s = s->next ; 
                }
-               return temp2 ; 
+               return s ; 
 
      }
    

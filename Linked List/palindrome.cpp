@@ -90,14 +90,14 @@ public:
                curr = next;
           }
           head = prev;
-          Node *temp2 = head;
+          Node *s = head;
           int j = 0;
-          while (temp2 != nullptr)
+          while (s != nullptr)
           {
-               if (hash[j] == temp2->data)
+               if (hash[j] == s->data)
                {
                     j++;
-                    temp2 = temp2->next;
+                    s = s->next;
                }
                else
                {

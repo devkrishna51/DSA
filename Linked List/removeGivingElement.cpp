@@ -16,9 +16,9 @@ class Solution
      public : 
 
      ListNode* removeDuplicates(ListNode *head , int val){
-          ListNode *temp2 = new ListNode(-1) ;
-          temp2->next = head ; 
-          ListNode *temp = temp2 ; 
+          ListNode *s = new ListNode(-1) ;
+          s->next = head ; 
+          ListNode *temp = s ; 
           while(temp->next != nullptr)
           {
                if(temp->next->data == val)
@@ -29,7 +29,7 @@ class Solution
                     temp = temp->next ; 
                }
           }
-          return temp2->next  ; 
+          return s->next  ; 
      }
 };
 

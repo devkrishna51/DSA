@@ -43,19 +43,19 @@ public:
      {
           unordered_set<Node *> hash;
           Node *temp = headA;
-          Node *temp2 = headB;
+          Node *s = headB;
           while (temp != nullptr)
           {
                hash.insert(temp);
                temp = temp->next;
           }
-          while (temp2 != nullptr)
+          while (s != nullptr)
           {
-               if (hash.find(temp2) != hash.end())
+               if (hash.find(s) != hash.end())
                {
-                    return temp2;
+                    return s;
                }
-               temp2 = temp2->next;
+               s = s->next;
           }
           return nullptr;
      }

@@ -45,4 +45,4 @@ int main()
      int result = s1.longestCommonSubsequence(text1, text2);
      cout << result ; 
      return 0;
-}
+} //he

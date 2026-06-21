@@ -38,6 +38,6 @@ int main(){
      Solution s1 ; 
      int result = s1.maxSumIS(arr) ; 
 
-     cout <<"Max Sum Increasing Subsequence : " <<result << endl; 
+     cout <<"Max Sum Increasing Subsequence : " <<result << endl;
      return 0 ; 
 }

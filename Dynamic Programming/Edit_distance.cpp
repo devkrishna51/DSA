@@ -32,7 +32,7 @@ class Solution
 
           int insert = 1 + solve(idx1, str1, idx2 + 1, str2, m, n, dp); // insert
           int deletion = 1 + solve(idx1 + 1, str1, idx2, str2, m, n, dp); // delete
-          int replace = \1 + solve(idx1 + 1, str1, idx2 + 1, str2, m, n, dp); // replace
+          int replace = 1 + solve(idx1 + 1, str1, idx2 + 1, str2, m, n, dp); // replace
 
           return dp[idx1][idx2] = min({insert, deletion, replace});
      }

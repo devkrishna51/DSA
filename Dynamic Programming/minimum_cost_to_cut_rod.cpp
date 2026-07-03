@@ -37,7 +37,7 @@ int main()
 
      int result = s1.minCost(n , cuts) ; 
 
-     cout << "Minimum Cost to Cut a Stick : " << result << endl <<endl ;
+     cout << "Minimum Cost to Cut a Stick :  " << result << endl <<endl ;
      return 0 ; 
 
 }

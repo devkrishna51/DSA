@@ -42,7 +42,7 @@ public:
                     if (!DFS(adj, color, i))
                     {
                          return false;
-                    }
+                    }    
                }
           }
           return true;

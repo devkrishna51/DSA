@@ -1,80 +1,74 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Heap
-{
+class maxHeap {
+  private:
+    // Initialize your data members
+    vector<int>arr; 
+  public:
 
-     vector<int> arr;
+    void push(int x) {
+        // Insert x into the heap
+        arr.push_back(x) ; 
+        int current = arr.size()-1 ; 
+        
+        while(current > 0){
+            int parent = (current-1)/2 ; 
+            if(arr[parent] < arr[current]){
+                swap(arr[parent] , arr[current]) ; 
+                current = parent ; 
+            }
+            else {
+                break ; 
+            }
+        }
+    }
 
-public:
-     void push(int x)
-     {
-          arr.push_back(x);
-          int index = arr.size() - 1;
-          while (index > 0)
-          {
-               int parent = (index - 1) / 2;
-               if(arr[parent] < arr[index])
-               {
-                    swap(arr[parent]  , arr[index]) ; 
-                    index = parent ; 
-               }
-               else{
-                    break ;
-               }
-          }
-     }
-     void pop()
-     {
-          if(arr.size() == 0)
-          {
-               return ; 
-          }
-          swap(arr[0] , arr[arr.size()-1]) ; 
-          arr.pop_back() ; 
-          for(int i = 0 ; i < arr.size() ; )
-          {
-               int leftidx = 2*i+1 ; 
-               int rightidx = 2*i+2 ; 
-               int largest = i ; 
-               if(leftidx < arr.size() && arr[i] < arr[leftidx])
-               {
-                    largest = leftidx ; 
-               }
-               if(rightidx < arr.size() && arr[i] < arr[rightidx])
-               {
-                    largest = rightidx ; 
-               }
-               if(largest == i)
-               {
-                    break ; 
-               }
-               swap(arr[i] ,arr[largest]) ; 
-               i = largest ;
-          
-          }
-     }
-     int peek()
-     {
-          if(arr.size() == 0)
-          {
-               return -1; 
-          }
-          return arr[0] ; 
-     }
-     int size()
-     {
-          if(arr.size() == 0)
-          {
-               return -1 ; 
-          }
-          return arr.size() ; 
-     }
-  
+    void pop() {
+        // Remove the top (maximum) element
+        if(arr.size() == 0){
+            return  ; 
+        }
+        swap(arr[0] , arr[arr.size() -1]) ; 
+        arr.pop_back() ; 
+        
+        for(int i = 0 ; i < arr.size() ;){
+            
+            int left = 2*i+1 ; 
+            int right = 2*i+2 ;
+            int largest = i ; 
+            if(left < arr.size() && arr[largest] < arr[left]){
+                largest = left ; 
+                
+            }
+            if(right < arr.size() && arr[largest] < arr[right]){
+                largest = right ; 
+            }
+            if(arr[largest] == arr[i]) {
+                
+                break ; 
+            }
+            swap(arr[largest] , arr[i]) ; 
+            i = largest ; 
+        }
+    }
+
+    int peek() {
+        // Return the top element or -1 if empty
+        if(arr.size() == 0){
+            return -1 ; 
+        }
+        return arr[0] ; 
+    }
+
+    int size() {
+        // Return the number of elements in the heap
+        return arr.size() ; 
+    }
 };
 int main()
 {
-     Heap h ; 
+     maxHeap h ; 
      h.push(10) ;
      h.push(20) ;
      h.push(30) ;

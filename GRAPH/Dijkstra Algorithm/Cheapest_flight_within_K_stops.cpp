@@ -90,8 +90,7 @@ int main()
           cout << "There is no valid route from the source to the destination within "
                << k << " stops." << endl;
      }
-     else
-     {
+     else {
           cout << "The minimum cost to travel from city " << src
                << " to city " << dst
                << " within " << k << " stops is: " << ans << endl;
